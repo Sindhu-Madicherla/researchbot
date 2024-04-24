@@ -21,7 +21,7 @@ import chromadb.utils.embedding_functions as embedding_functions
 from chatxiv-project.entity.config_entity import LoadDataConfig
 
 
-os.environ['OPENAI_API_KEY'] = 'sk-proj-SVZIRkv2uDOdFi3nMgDNT3BlbkFJkYDbAjEPILAXb3pOYzBW'\
+os.environ['OPENAI_API_KEY'] = '***'
 
 class LoadData:
     

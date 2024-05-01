@@ -18,18 +18,22 @@ import chromadb.utils.embedding_functions as embedding_functions
 # from chat_utils import ChatLLM, ChatSession
 
 
+<<<<<<< HEAD
 from chatxiv-project.entity.config_entity import LoadDataConfig
+=======
+from ResearchBot.entity.config_entity import DataIngestionConfig
+>>>>>>> 8173d6e (Changes)
 
 
 os.environ['OPENAI_API_KEY'] = '***'
 
-class LoadData:
+class DataIngestion:
     
-    def __init__(self):
+    def __init__(self, config: DataIngestionConfig):
         self.config = config
         self.arxiv_client = arxiv.Client()
 
-    def download_pdf(self, config: LoadDataConfig()):
+    def download_pdf(self):
         '''Downloads a paper from arXiv given its ID'''
         paper = next(arxiv.Client().results(arxiv.Search(id_list=[paper_id])))
         return paper.download_pdf(dirpath=dirpath), paper

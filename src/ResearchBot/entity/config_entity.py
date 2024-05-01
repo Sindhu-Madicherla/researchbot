@@ -3,6 +3,7 @@ from pathlib import Path
 
 
 @dataclass(frozen=True)
-class LoadDataConfig():
+
+class DataIngestionConfig():
     root_dir: Path
-    source_dir: Path
+    papers: str

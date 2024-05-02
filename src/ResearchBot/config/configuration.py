@@ -46,5 +46,16 @@ class ConfigurationManager:
 
         )
         return vector_index_config
+    def get_response_synthesis_config(self) -> ResponseSynthesisConfig:
+        config = self.config.vector_db
+        response_synthesis_config = ResponseSynthesisConfig(
+            root_dir=config.root_dir,
+            embedding_model = config.embedding_model,
+            cache_dir = config.cache_dir,
+            db_name = config.db_name,
+            batch_size = config.batch_size
+
+        )
+        return response_synthesis_config
     
     

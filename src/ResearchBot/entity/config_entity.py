@@ -15,3 +15,11 @@ class VectorIndexConfig():
     cache_dir: Path
     db_name: str
     batch_size: int
+
+@dataclass(frozen=True)   
+class ResponseSynthesisConfig():
+    root_dir: Path
+    embedding_model: str
+    cache_dir: Path
+    db_name: str
+    batch_size: int

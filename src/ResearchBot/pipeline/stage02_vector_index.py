@@ -16,5 +16,6 @@ class VectorIndexPipeline :
         vector_index = VectorIndex(config=vector_index_config)
         vector_index.create_vector_db()
         index = vector_index.get_vector_index(documents=documents)
+        return index
 
 

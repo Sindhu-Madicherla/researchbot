@@ -1,0 +1,382 @@
+[2024-05-01 12:31:34,615: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 12:31:34,619: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 12:31:34,623: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 12:31:34,623: ERROR: main: Argument path_to_txt of type <class 'str'> to <function read_txt at 0x000001555EFE8CA0> does not match annotation type <class 'pathlib.Path'>]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 17, in main
+    data_ingestion_config = config.get_data_ingestion_config()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\config\configuration.py", line 26, in get_data_ingestion_config
+    papers = read_txt(config.papers_path)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\ensure\main.py", line 845, in __call__
+    raise EnsureError(msg.format(
+ensure.main.EnsureError: Argument path_to_txt of type <class 'str'> to <function read_txt at 0x000001555EFE8CA0> does not match annotation type <class 'pathlib.Path'>
+[2024-05-01 12:40:04,543: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 12:40:04,543: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 12:40:04,543: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 12:40:04,543: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 12:40:04,543: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 12:40:07,332: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-01 12:40:10,344: INFO: __init__: Requesting page (first: True, try: 1): https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 12:40:11,950: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-01 12:40:14,965: INFO: __init__: Requesting page (first: True, try: 2): https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 12:40:16,546: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-01 12:40:19,555: INFO: __init__: Requesting page (first: True, try: 3): https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 12:40:21,051: ERROR: main: Page request resulted in HTTP 400 (https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100)]
+Traceback (most recent call last):
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 634, in _parse_feed
+    return self.__try_parse_feed(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 677, in __try_parse_feed
+    raise HTTPError(url, try_index, resp.status_code)
+arxiv.HTTPError: Page request resulted in HTTP 400 (https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 634, in _parse_feed
+    return self.__try_parse_feed(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 677, in __try_parse_feed
+    raise HTTPError(url, try_index, resp.status_code)
+arxiv.HTTPError: Page request resulted in HTTP 400 (https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 634, in _parse_feed
+    return self.__try_parse_feed(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 677, in __try_parse_feed
+    raise HTTPError(url, try_index, resp.status_code)
+arxiv.HTTPError: Page request resulted in HTTP 400 (https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 19, in main
+    pdf_path, paper = data_ingestion.download_pdf()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 33, in download_pdf
+    paper = next(arxiv.Client().results(arxiv.Search(id_list=self.config.papers)))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 587, in _results
+    feed = self._parse_feed(page_url, first_page=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 644, in _parse_feed
+    return self._parse_feed(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 644, in _parse_feed
+    return self._parse_feed(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 644, in _parse_feed
+    return self._parse_feed(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 648, in _parse_feed
+    raise err
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 634, in _parse_feed
+    return self.__try_parse_feed(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\arxiv\__init__.py", line 677, in __try_parse_feed
+    raise HTTPError(url, try_index, resp.status_code)
+arxiv.HTTPError: Page request resulted in HTTP 400 (https://export.arxiv.org/api/query?search_query=&id_list=212.3%2C212.4&sortBy=relevance&sortOrder=descending&start=0&max_results=100)
+[2024-05-01 12:42:40,510: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 12:42:40,514: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 12:42:40,514: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 12:42:40,514: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 12:42:40,514: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 12:42:42,279: INFO: __init__: Got first page: 1 of 1 total results]
+[2024-05-01 12:42:44,717: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-01 15:41:05,638: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 15:41:05,638: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 15:41:05,638: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 15:41:05,640: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 15:41:05,640: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 15:41:08,017: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 15:41:08,175: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-01 15:41:33,938: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 15:41:33,938: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 15:41:33,940: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 15:41:33,940: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 15:41:33,940: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 15:41:35,334: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 15:41:35,534: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-01 15:42:29,850: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 15:42:29,850: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 15:42:29,853: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 15:42:29,854: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 15:42:29,854: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 15:42:31,410: INFO: __init__: Got first page: 1 of 1 total results]
+[2024-05-01 15:42:38,189: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-01 15:47:34,502: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 15:47:34,506: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 15:47:34,506: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 15:47:34,506: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 15:47:34,506: ERROR: main: 'itertools.islice' object has no attribute 'download_pdf']
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 19, in main
+    pdf_path, paper = data_ingestion.download_pdf()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 36, in download_pdf
+    return papers.download_pdf(dirpath=self.config.root_dir), papers
+AttributeError: 'itertools.islice' object has no attribute 'download_pdf'
+[2024-05-01 15:48:56,707: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 15:48:56,707: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 15:48:56,707: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 15:48:56,711: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 15:48:56,711: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 15:48:58,233: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 15:48:58,249: ERROR: main: 'list' object has no attribute 'download_pdf']
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 19, in main
+    pdf_path, paper = data_ingestion.download_pdf()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 36, in download_pdf
+    return papers.download_pdf(dirpath=self.config.root_dir), papers
+AttributeError: 'list' object has no attribute 'download_pdf'
+[2024-05-01 15:52:54,877: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 15:52:54,877: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 15:52:54,877: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 15:52:54,877: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 15:52:54,877: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 15:52:57,136: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 15:52:57,341: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-01 16:02:35,042: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:02:35,042: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:02:35,042: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:02:35,042: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:02:35,042: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:02:37,429: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:02:37,636: ERROR: main: unhashable type: 'Result']
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 19, in main
+    papers = data_ingestion.download_pdf()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 35, in download_pdf
+    return {(paper.download_pdf(dirpath=self.config.root_dir), paper) for paper in papers}
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 35, in <setcomp>
+    return {(paper.download_pdf(dirpath=self.config.root_dir), paper) for paper in papers}
+TypeError: unhashable type: 'Result'
+[2024-05-01 16:03:52,889: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:03:52,893: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:03:52,893: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:03:52,893: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:03:52,893: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:03:54,949: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:03:54,949: ERROR: main: name 'paper' is not defined]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 19, in main
+    papers = data_ingestion.download_pdf()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 35, in download_pdf
+    print(type(paper.download_pdf(dirpath=self.config.root_dir)))
+NameError: name 'paper' is not defined. Did you mean: 'papers'?
+[2024-05-01 16:04:22,788: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:04:22,788: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:04:22,792: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:04:22,792: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:04:22,792: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:04:24,441: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:04:24,739: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-01 16:05:03,186: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:05:03,188: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:05:03,188: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:05:03,189: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:05:03,189: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:05:04,887: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:05:05,689: ERROR: main: unhashable type: 'Result']
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 19, in main
+    papers = data_ingestion.download_pdf()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 37, in download_pdf
+    dic = {(paper.download_pdf(dirpath=self.config.root_dir), paper) for paper in papers}
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 37, in <setcomp>
+    dic = {(paper.download_pdf(dirpath=self.config.root_dir), paper) for paper in papers}
+TypeError: unhashable type: 'Result'
+[2024-05-01 16:05:40,800: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:05:40,804: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:05:40,804: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:05:40,804: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:05:40,804: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:05:42,568: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:05:43,011: ERROR: main: unhashable type: 'Result']
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 19, in main
+    papers = data_ingestion.download_pdf()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 37, in download_pdf
+    dic = {(str(paper.download_pdf(dirpath=self.config.root_dir)), paper) for paper in papers}
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 37, in <setcomp>
+    dic = {(str(paper.download_pdf(dirpath=self.config.root_dir)), paper) for paper in papers}
+TypeError: unhashable type: 'Result'
+[2024-05-01 16:07:48,600: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:07:48,600: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:07:48,600: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:07:48,600: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:07:48,600: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:07:50,880: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:07:51,512: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-01 16:08:17,430: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:08:17,430: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:08:17,434: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:08:17,434: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:08:17,434: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:08:19,242: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:08:19,428: ERROR: main: unhashable type: 'Result']
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 8, in <module>
+    data_ingestion.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage01_load_articles.py", line 19, in main
+    papers = data_ingestion.download_pdf()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 40, in download_pdf
+    return {(paper.download_pdf(dirpath=self.config.root_dir), paper) for paper in papers}
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\data_ingestion.py", line 40, in <setcomp>
+    return {(paper.download_pdf(dirpath=self.config.root_dir), paper) for paper in papers}
+TypeError: unhashable type: 'Result'
+[2024-05-01 16:08:32,145: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:08:32,149: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:08:32,149: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:08:32,149: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:08:32,149: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:08:33,583: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:08:36,095: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-01 16:27:24,626: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-01 16:27:24,628: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-01 16:27:24,629: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-01 16:27:24,629: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-01 16:27:24,630: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-01 16:27:26,703: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-01 16:27:32,319: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-02 08:46:21,793: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-02 08:46:21,793: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-02 08:46:21,793: ERROR: main: VectorIndexConfig() takes no arguments]
+Traceback (most recent call last):
+  File "c:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 19, in <module>
+    vector_index.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 15, in main
+    vector_index_config = config.get_vector_index_config()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\config\configuration.py", line 40, in get_vector_index_config
+    vector_db_config = VectorIndexConfig(
+TypeError: VectorIndexConfig() takes no arguments
+[2024-05-02 08:53:46,564: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-02 08:53:46,567: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-02 08:53:46,567: ERROR: main: name 'vector_db_config' is not defined]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 19, in <module>
+    vector_index.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 15, in main
+    vector_index_config = config.get_vector_index_config()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\config\configuration.py", line 49, in get_vector_index_config
+    return vector_db_config
+NameError: name 'vector_db_config' is not defined. Did you mean: 'vector_index_config'?
+[2024-05-02 08:55:03,955: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-02 08:55:03,955: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-02 08:55:03,991: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-02 08:55:04,569: ERROR: main: VectorIndex.get_vector_index() missing 1 required positional argument: 'documents']
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 19, in <module>
+    vector_index.main()
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index()
+TypeError: VectorIndex.get_vector_index() missing 1 required positional argument: 'documents'
+[2024-05-02 09:04:20,912: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-02 09:04:20,915: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-02 09:04:20,915: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-02 09:04:20,920: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-02 09:04:20,920: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-02 09:04:23,013: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-02 09:04:29,094: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-02 09:04:29,094: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-02 09:04:29,094: ERROR: main: VectorIndexPipeline.main() missing 1 required positional argument: 'documents']
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 19, in <module>
+    vector_index.main()
+TypeError: VectorIndexPipeline.main() missing 1 required positional argument: 'documents'
+[2024-05-02 09:04:58,697: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-02 09:04:58,701: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-02 09:04:58,701: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-02 09:04:58,701: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-02 09:04:58,701: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-02 09:05:00,430: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-02 09:05:07,056: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-02 09:05:07,056: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-02 09:05:07,056: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-02 09:05:07,081: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-02 09:05:08,303: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-02 09:05:08,319: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.30302729847283394 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-02 09:05:09,333: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-02 09:05:09,333: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.9974184598102205 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-02 09:05:12,194: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-02 09:05:12,194: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.3100712533722567 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-02 09:05:13,422: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-02 09:05:13,422: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 3.26944999972632 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-02 09:05:17,594: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-02 09:05:17,598: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 4.086722424877658 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-02 09:05:22,638: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-02 09:05:22,642: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 19, in <module>
+    vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 68, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}

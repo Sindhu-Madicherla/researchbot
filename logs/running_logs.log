@@ -380,3 +380,1278 @@ Traceback (most recent call last):
   File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
     raise self._make_status_error_from_response(err.response) from None
 openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 08:04:13,335: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 08:04:13,351: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:04:13,351: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 08:04:13,351: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 08:04:13,351: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 08:04:15,486: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 08:04:21,244: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 08:04:21,244: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 08:04:21,244: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:04:21,276: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:04:22,892: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:04:22,916: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.6274308264911875 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:04:24,783: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:04:24,783: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.3516056375036662 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:04:27,371: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:04:27,371: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.4257575678064982 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:04:29,679: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:04:29,679: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.505439994949019 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:04:33,050: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:04:33,050: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.9278701129884617 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:04:34,670: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:04:34,670: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 68, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 08:06:41,062: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 08:06:41,062: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:06:41,062: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 08:06:41,062: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 08:06:41,062: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 08:06:43,102: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 08:06:51,044: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 08:06:51,044: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 08:06:51,060: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:06:51,060: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:06:52,524: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:06:52,524: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.4183151625478764 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:06:53,733: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:06:53,733: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.316213737959359 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:06:55,902: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:06:55,904: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.26683837853399517 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:06:57,131: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:06:57,131: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.521309131777686 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:07:00,308: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:07:00,308: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 4.097104265350934 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:07:05,415: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:07:05,415: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 68, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 08:21:42,783: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 08:21:42,783: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:21:42,783: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 08:21:42,783: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 08:21:42,783: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 08:21:45,034: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 08:21:51,067: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 08:21:51,067: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 08:21:51,067: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:21:51,077: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:21:52,711: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:21:52,711: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.5177622115176927 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:21:54,151: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:21:54,152: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.491298314817249 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:21:56,608: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:21:56,608: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 3.097097933328058 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:22:01,002: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:22:01,002: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 6.789425763057873 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:22:08,656: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:22:08,656: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 11.54517498666297 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:22:21,287: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:22:21,287: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 69, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 08:24:29,297: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 08:24:29,297: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:24:29,297: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 08:24:29,297: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 08:24:29,297: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 08:24:31,036: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 08:24:37,550: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 08:24:37,550: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 08:24:37,550: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:24:37,565: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:24:39,105: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:24:39,120: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.8962160561994267 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:24:41,335: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:24:41,335: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.7811967659103936 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:24:44,431: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:24:44,431: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.12668525780117124 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:24:45,360: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:24:45,360: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 5.590927364164997 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:24:51,714: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:24:51,715: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 11.351880828368158 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:25:03,792: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:25:03,799: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 69, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 08:32:21,790: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 08:32:21,790: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:32:21,790: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 08:32:21,790: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 08:32:21,790: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 08:32:24,218: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 08:32:29,830: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 08:32:29,830: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 08:32:29,830: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:32:29,847: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:32:31,473: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:32:31,488: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.4134569194384594 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:32:33,174: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:32:33,174: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.0139780271520968 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:32:35,413: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:32:35,413: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.801053727043387 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:32:38,957: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:32:38,957: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.9369468803147445 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:32:41,625: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:32:41,625: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 15.085328282053851 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:32:58,109: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:32:58,109: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 70, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 08:39:10,583: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 08:39:10,583: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:39:10,583: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 08:39:10,583: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 08:39:10,583: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 08:39:13,410: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 08:39:20,536: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 08:39:20,536: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 08:39:20,536: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:39:20,552: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:39:21,690: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:39:21,705: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.9448645775730931 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:39:24,050: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:39:24,050: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.277413132681335 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:39:26,794: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:39:26,794: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.9494533600372326 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:39:30,480: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:39:30,480: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 6.362558892306769 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:39:38,386: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:39:38,386: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.3696829940447426 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:39:42,075: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:39:42,075: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 70, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 08:41:11,894: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 08:41:11,894: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:41:11,894: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 08:41:11,900: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 08:41:11,900: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 08:41:13,824: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 08:41:19,018: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 08:41:19,018: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 08:41:19,018: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:41:19,035: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:41:20,588: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:41:20,588: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.580731675187414 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:41:22,225: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:41:22,225: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.2401895037428805 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:41:23,248: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:41:23,248: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 3.9538509821898224 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:41:27,881: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:41:27,881: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 7.862471271714791 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:41:36,869: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:41:36,869: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 11.65068382821809 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:41:49,772: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:41:49,772: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 70, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 08:52:50,611: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:53:20,238: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:55:59,174: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 08:55:59,174: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:55:59,174: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 08:55:59,174: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 08:55:59,174: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 08:56:00,919: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 08:56:06,224: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 08:56:06,224: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 08:56:06,224: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 08:56:06,240: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 08:56:07,775: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:56:07,775: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.40391608288158487 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:56:09,451: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:56:09,451: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.8286584946631346 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:56:12,594: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:56:12,596: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.3840244522503848 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:56:15,244: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:56:15,244: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.21869591346469 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:56:17,507: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:56:17,507: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 15.315433418313203 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 08:56:34,197: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 08:56:34,202: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 70, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 09:06:50,995: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 09:06:50,995: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 09:06:50,995: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 09:06:50,995: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 09:06:50,995: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 09:06:53,069: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 09:06:58,197: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 09:06:58,197: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 09:06:58,197: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 09:06:58,213: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 09:06:59,344: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:06:59,344: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.9364453384354657 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:07:01,193: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:07:01,193: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.04769310330897869 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:07:02,007: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:07:02,007: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 3.6286174644945897 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:07:06,312: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:07:06,312: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.2316831299576059 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:07:08,255: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:07:08,258: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 13.342361538510572 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:07:22,539: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:07:22,539: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 71, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 09:07:57,728: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 09:07:57,728: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 09:07:57,728: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 09:07:57,728: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 09:07:57,728: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 09:07:59,422: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 09:08:04,489: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 09:08:04,489: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 09:08:04,489: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 09:08:04,507: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 09:08:05,969: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:08:05,969: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.6762796205236987 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:08:07,336: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:08:07,336: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.1254453440485315 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:08:09,311: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:08:09,311: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.675297020621786 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:08:11,840: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:08:11,840: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 3.2513038408076236 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:08:16,038: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:08:16,038: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 13.780895613846871 seconds as it raised AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}.]
+[2024-05-03 09:08:30,789: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 401 Unauthorized"]
+[2024-05-03 09:08:30,794: ERROR: main: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}]
+Traceback (most recent call last):
+  File "C:\ML\Projects\Celstrat LLM JAM\researchbot\main.py", line 20, in <module>
+    index = vector_index.main(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\pipeline\stage02_vector_index.py", line 18, in main
+    index = vector_index.get_vector_index(documents=documents)
+  File "c:\ml\projects\celstrat llm jam\researchbot\src\ResearchBot\components\vector_index.py", line 73, in get_vector_index
+    pipeline.run(documents=documents, show_progress=True)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 734, in run
+    nodes = run_transformations(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\ingestion\pipeline.py", line 124, in run_transformations
+    nodes = transform(nodes, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 422, in __call__
+    embeddings = self.get_text_embedding_batch(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\instrumentation\dispatcher.py", line 274, in wrapper
+    result = func(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\core\base\embeddings\base.py", line 326, in get_text_embedding_batch
+    embeddings = self._get_text_embeddings(cur_batch)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 427, in _get_text_embeddings
+    return get_embeddings(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 289, in wrapped_f
+    return self(f, *args, **kw)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\llama_index\embeddings\openai\base.py", line 180, in get_embeddings
+    data = client.embeddings.create(input=list_of_text, model=engine, **kwargs).data
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1233, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 922, in request
+    return self._request(
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1013, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ***. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+[2024-05-03 09:09:37,335: INFO: main: >>>>>> Stage Data Ingestion started <<<<<<]
+[2024-05-03 09:09:37,335: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 09:09:37,335: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-03 09:09:37,335: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-03 09:09:37,338: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-03 09:09:39,096: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-03 09:09:44,286: INFO: main: >>>>>> Stage Data Ingestion completed <<<<<<
+
+x==========x]
+[2024-05-03 09:09:44,286: INFO: main: >>>>>> Stage Vector Index Creation started <<<<<<]
+[2024-05-03 09:09:44,286: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-03 09:09:44,310: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-03 09:09:46,453: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-03 09:09:49,675: INFO: main: >>>>>> Stage Vector Index Creation completed <<<<<<
+
+x==========x]
+[2024-05-04 16:04:26,053: INFO: common: created directory at: articles]
+[2024-05-04 16:04:26,053: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:04:26,054: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:04:28,189: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:05:51,294: INFO: common: created directory at: articles]
+[2024-05-04 16:05:51,294: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:05:51,294: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:05:52,870: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:07:45,338: INFO: common: created directory at: articles]
+[2024-05-04 16:07:45,338: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:07:45,339: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:07:46,861: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:10:20,658: INFO: common: created directory at: articles]
+[2024-05-04 16:10:20,658: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-04 16:10:20,659: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2401.01708&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:10:22,636: INFO: __init__: Got first page: 1 of 1 total results]
+[2024-05-04 16:21:54,214: INFO: common: created directory at: articles]
+[2024-05-04 16:21:54,215: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:21:54,215: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002%2C2401.01708%2C&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:21:56,235: INFO: __init__: Got first page: 3 of 3 total results]
+[2024-05-04 16:22:04,928: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 16:23:16,891: INFO: common: created directory at: articles]
+[2024-05-04 16:23:16,892: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:23:16,892: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:23:18,594: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:23:23,609: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 16:27:17,866: INFO: common: created directory at: articles]
+[2024-05-04 16:27:17,866: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:27:17,866: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:27:19,906: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:27:24,431: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 16:27:26,102: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:27:26,113: INFO: _base_client: Retrying request to /embeddings in 0.895227 seconds]
+[2024-05-04 16:27:28,100: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:27:28,100: INFO: _base_client: Retrying request to /embeddings in 1.674896 seconds]
+[2024-05-04 16:27:30,663: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:27:30,665: INFO: _base_client: Retrying request to /embeddings in 3.913737 seconds]
+[2024-05-04 16:27:35,463: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:27:35,465: INFO: _base_client: Retrying request to /embeddings in 6.726844 seconds]
+[2024-05-04 16:27:43,161: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:27:43,162: INFO: _base_client: Retrying request to /embeddings in 7.909513 seconds]
+[2024-05-04 16:27:52,419: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:27:52,421: INFO: _base_client: Retrying request to /embeddings in 7.986822 seconds]
+[2024-05-04 16:28:01,714: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:28:01,716: INFO: _base_client: Retrying request to /embeddings in 6.480392 seconds]
+[2024-05-04 16:28:09,125: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:28:09,126: INFO: _base_client: Retrying request to /embeddings in 7.371643 seconds]
+[2024-05-04 16:40:05,977: INFO: common: created directory at: articles]
+[2024-05-04 16:40:05,978: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:40:05,978: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:40:07,704: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:40:12,303: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 16:40:13,377: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:40:13,378: INFO: _base_client: Retrying request to /embeddings in 0.868343 seconds]
+[2024-05-04 16:40:15,468: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:40:15,468: INFO: _base_client: Retrying request to /embeddings in 1.962945 seconds]
+[2024-05-04 16:40:18,592: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:40:18,593: INFO: _base_client: Retrying request to /embeddings in 3.426225 seconds]
+[2024-05-04 16:42:35,071: INFO: common: created directory at: articles]
+[2024-05-04 16:42:35,071: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:42:35,071: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:42:36,834: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:42:43,210: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 16:42:44,739: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:42:44,742: INFO: _base_client: Retrying request to /embeddings in 0.842181 seconds]
+[2024-05-04 16:42:46,882: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:42:46,883: INFO: _base_client: Retrying request to /embeddings in 1.518769 seconds]
+[2024-05-04 16:42:49,296: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:42:49,297: INFO: _base_client: Retrying request to /embeddings in 3.628739 seconds]
+[2024-05-04 16:49:25,754: INFO: common: created directory at: articles]
+[2024-05-04 16:49:25,754: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:49:25,754: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:49:27,268: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:49:34,069: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 16:49:35,230: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:49:35,231: INFO: _base_client: Retrying request to /embeddings in 0.919023 seconds]
+[2024-05-04 16:49:36,922: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:49:36,923: INFO: _base_client: Retrying request to /embeddings in 1.843245 seconds]
+[2024-05-04 16:49:39,454: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:49:39,456: INFO: _base_client: Retrying request to /embeddings in 3.648457 seconds]
+[2024-05-04 16:55:49,613: INFO: common: created directory at: articles]
+[2024-05-04 16:55:49,614: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:55:49,614: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 16:55:51,192: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 16:55:55,698: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 16:55:56,540: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:55:56,542: INFO: _base_client: Retrying request to /embeddings in 0.902163 seconds]
+[2024-05-04 16:55:58,040: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 16:55:58,042: INFO: _base_client: Retrying request to /embeddings in 1.929321 seconds]
+[2024-05-04 16:59:59,191: INFO: common: created directory at: articles]
+[2024-05-04 16:59:59,191: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 16:59:59,191: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 17:00:01,058: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 17:00:05,376: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 17:00:07,082: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 17:00:07,083: INFO: _base_client: Retrying request to /embeddings in 0.771904 seconds]
+[2024-05-04 17:00:08,859: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 17:00:08,859: INFO: _base_client: Retrying request to /embeddings in 1.849545 seconds]
+[2024-05-04 17:00:11,940: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 17:00:11,942: INFO: _base_client: Retrying request to /embeddings in 3.521715 seconds]
+[2024-05-04 17:01:23,192: INFO: common: created directory at: articles]
+[2024-05-04 17:01:23,193: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-04 17:01:23,193: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-04 17:01:24,936: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-04 17:01:29,782: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 17:01:31,621: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-04 17:08:33,407: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 17:17:41,964: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 17:17:43,561: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 17:17:43,561: INFO: _base_client: Retrying request to /embeddings in 0.995990 seconds]
+[2024-05-04 17:17:44,852: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 17:17:44,852: INFO: _base_client: Retrying request to /embeddings in 1.683237 seconds]
+[2024-05-04 17:17:46,818: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 17:17:46,818: INFO: _base_client: Retrying request to /embeddings in 3.221348 seconds]
+[2024-05-04 17:17:50,334: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"]
+[2024-05-04 17:17:50,335: INFO: _base_client: Retrying request to /embeddings in 6.665055 seconds]
+[2024-05-04 17:18:20,051: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-04 17:18:21,506: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-04 17:18:23,827: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:47:37,739: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 08:47:39,790: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 08:47:41,056: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:50:09,473: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 08:50:11,766: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:51:38,558: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 08:51:40,740: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:52:28,049: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 08:52:30,394: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:55:49,916: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 08:55:52,042: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:55:52,429: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 08:55:54,140: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:55:55,074: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:55:55,409: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 08:55:57,561: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:55:58,747: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 08:55:59,095: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 08:56:01,042: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 12:47:42,807: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 12:47:53,045: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 12:47:54,374: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 12:49:27,970: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 12:49:35,811: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 12:49:37,904: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 12:50:27,872: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 12:50:29,413: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 12:52:12,938: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 12:52:14,839: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 12:52:49,688: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 12:52:50,813: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 12:53:40,589: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 12:53:43,253: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 13:43:57,060: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 13:44:38,511: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 13:44:53,597: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 13:44:54,927: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 13:45:11,971: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 13:45:15,408: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 13:45:47,088: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 13:45:48,168: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 13:47:01,799: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 13:47:03,335: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 13:47:34,262: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 13:47:35,899: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 13:48:29,557: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 13:48:32,731: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 15:28:58,119: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 15:33:56,869: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 15:38:57,502: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 15:52:14,356: INFO: common: created directory at: articles]
+[2024-05-05 15:52:14,362: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 15:52:14,362: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 15:52:16,586: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-05 15:52:22,093: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 15:52:23,897: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 15:53:10,608: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 15:53:12,330: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 15:57:49,681: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 15:58:18,707: INFO: common: created directory at: articles]
+[2024-05-05 15:58:18,707: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 15:58:18,707: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 15:58:20,753: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-05 15:58:29,976: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 16:08:20,605: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 16:26:47,532: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 16:35:19,466: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 16:35:20,933: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 16:37:47,361: INFO: common: created directory at: articles]
+[2024-05-05 16:37:47,362: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 16:37:47,362: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 16:37:49,577: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-05 16:37:56,844: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 16:42:32,090: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 16:42:34,341: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 16:48:49,583: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 16:48:51,593: INFO: common: created directory at: articles]
+[2024-05-05 16:48:51,593: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 16:48:51,593: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 16:48:53,839: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-05 16:49:01,844: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 16:51:05,345: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 17:16:28,354: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:16:31,864: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:19:01,465: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:19:04,243: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:20:29,915: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:20:33,900: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:21:37,038: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:21:39,790: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:22:33,539: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:22:36,207: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:23:55,678: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:23:59,076: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:25:25,324: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:25:29,109: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:28:31,295: INFO: common: created directory at: articles]
+[2024-05-05 17:28:31,309: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:28:31,309: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Helium&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:28:34,595: INFO: __init__: Got first page: 100 of 9171 total results]
+[2024-05-05 17:29:35,933: INFO: common: created directory at: articles]
+[2024-05-05 17:29:35,940: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:29:35,940: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:29:38,692: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:31:17,482: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:31:20,193: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:32:22,075: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:32:24,771: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:33:36,367: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:33:39,425: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:35:03,039: INFO: common: created directory at: articles]
+[2024-05-05 17:35:03,040: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:35:03,040: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:35:05,762: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:37:30,574: INFO: common: created directory at: articles]
+[2024-05-05 17:37:30,574: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:37:30,574: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:37:33,340: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:38:42,394: INFO: common: created directory at: articles]
+[2024-05-05 17:38:42,395: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:38:42,395: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:38:45,460: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:39:28,812: INFO: common: created directory at: articles]
+[2024-05-05 17:39:28,812: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:39:28,813: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:39:31,409: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:39:49,802: INFO: common: created directory at: articles]
+[2024-05-05 17:39:49,802: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:39:49,803: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:39:52,251: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:41:13,276: INFO: common: created directory at: articles]
+[2024-05-05 17:41:13,277: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:41:13,277: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:41:16,035: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:42:44,036: INFO: common: created directory at: articles]
+[2024-05-05 17:42:44,036: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:42:44,036: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:42:47,297: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 17:45:12,779: INFO: common: created directory at: articles]
+[2024-05-05 17:45:12,780: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 17:45:12,780: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 17:45:15,466: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 19:04:03,752: INFO: common: created directory at: articles]
+[2024-05-05 19:04:03,752: INFO: common: txt file: papers1.txt loaded successfully]
+[2024-05-05 19:04:03,753: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:04:06,783: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 19:06:54,720: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:07:44,462: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:08:36,589: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:10:23,069: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:11:01,809: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:11:12,521: ERROR: base_events: Exception in callback _HandlerDelegate.execute.<locals>.<lambda>(<Task cancell...\web.py:1742>>) at C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tornado\web.py:2434
+handle: <Handle _HandlerDelegate.execute.<locals>.<lambda>(<Task cancell...\web.py:1742>>) at C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tornado\web.py:2434>]
+Traceback (most recent call last):
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tornado\web.py", line 1742, in _execute
+    async def _execute(
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\SINDHU MADHICHERLA\AppData\Local\Programs\Python\Python310\lib\site-packages\tornado\web.py", line 2434, in <lambda>
+    fut.add_done_callback(lambda f: f.result())
+asyncio.exceptions.CancelledError
+[2024-05-05 19:11:27,871: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:16:59,323: INFO: common: created directory at: articles]
+[2024-05-05 19:16:59,324: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Physics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:17:03,826: INFO: __init__: Got first page: 100 of 908671 total results]
+[2024-05-05 19:17:23,345: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:17:23,348: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.13050303405284602 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:17:24,915: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:17:24,917: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.9507836962039988 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:17:27,722: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:17:27,724: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.64993089031383 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:17:31,159: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:17:31,161: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.909375066273112 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:17:35,201: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:17:35,203: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 15.009268982597185 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:17:51,425: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:18:06,415: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:18:26,738: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 19:18:28,271: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-05 19:18:47,715: INFO: common: created directory at: articles]
+[2024-05-05 19:18:47,715: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Physics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:18:50,871: INFO: __init__: Got first page: 100 of 908671 total results]
+[2024-05-05 19:19:11,750: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:19:11,753: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.5202515202376198 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:19:13,379: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:19:13,382: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.0392499650578957 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:19:16,031: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:19:16,033: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.8656973369675285 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:19:18,759: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:19:18,760: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 3.528380662346615 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:19:23,145: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:19:23,146: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 13.779358039349464 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:19:37,843: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:21:22,678: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:21:53,996: INFO: common: created directory at: articles]
+[2024-05-05 19:21:53,996: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Physics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:21:57,793: INFO: __init__: Got first page: 100 of 908671 total results]
+[2024-05-05 19:22:08,876: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:22:08,880: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.3594041653611678 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:22:10,663: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:22:10,666: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.6288777023957064 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:22:13,726: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:22:13,727: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.5463376059572207 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:22:16,719: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:22:16,721: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.8707067539469637 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:22:20,825: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:22:20,828: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 13.351523911715788 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 21170 tokens (21170 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:22:35,671: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:30:52,370: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:30:57,769: INFO: common: created directory at: articles]
+[2024-05-05 19:30:57,769: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:31:01,543: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:31:07,360: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:31:07,363: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.18660588639721065 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 9666 tokens (9666 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:31:09,121: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:31:09,123: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 1.7938496701723623 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 9666 tokens (9666 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:31:12,466: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:31:12,468: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 3.5813236140255342 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 9666 tokens (9666 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:31:17,572: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:31:17,574: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 4.793652929828667 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 9666 tokens (9666 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:31:23,603: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:31:23,607: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 7.711491978835756 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 9666 tokens (9666 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 19:31:32,862: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 19:40:14,384: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:40:23,549: INFO: common: created directory at: articles]
+[2024-05-05 19:40:23,550: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:40:27,015: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:42:13,902: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:42:20,074: INFO: common: created directory at: articles]
+[2024-05-05 19:42:20,075: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:42:23,446: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:43:03,542: INFO: common: created directory at: articles]
+[2024-05-05 19:43:03,543: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:43:06,907: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:43:46,032: INFO: common: created directory at: articles]
+[2024-05-05 19:43:46,033: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:43:48,780: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:45:48,777: INFO: common: created directory at: articles]
+[2024-05-05 19:45:48,777: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:45:52,621: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:46:12,360: INFO: common: created directory at: articles]
+[2024-05-05 19:46:12,361: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:46:15,740: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:46:43,760: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:46:50,137: INFO: common: created directory at: articles]
+[2024-05-05 19:46:50,138: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:46:54,426: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:47:14,444: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:47:21,561: INFO: common: created directory at: articles]
+[2024-05-05 19:47:21,561: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:47:25,064: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:48:16,527: INFO: common: created directory at: articles]
+[2024-05-05 19:48:16,527: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Maths&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:48:19,697: INFO: __init__: Got first page: 100 of 57341 total results]
+[2024-05-05 19:50:56,240: INFO: common: created directory at: articles]
+[2024-05-05 19:50:56,241: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%0D%0A2401.00002%0D%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:50:58,251: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 19:51:01,266: INFO: __init__: Requesting page (first: True, try: 1): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%0D%0A2401.00002%0D%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:51:03,073: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 19:51:06,088: INFO: __init__: Requesting page (first: True, try: 2): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%0D%0A2401.00002%0D%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:51:07,877: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 19:51:10,885: INFO: __init__: Requesting page (first: True, try: 3): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%0D%0A2401.00002%0D%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:52:23,325: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:52:38,047: INFO: common: created directory at: articles]
+[2024-05-05 19:52:38,048: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%0D%0A2401.00002%0D%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:52:39,947: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 19:52:42,949: INFO: __init__: Requesting page (first: True, try: 1): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%0D%0A2401.00002%0D%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:52:44,647: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 19:52:47,650: INFO: __init__: Requesting page (first: True, try: 2): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%0D%0A2401.00002%0D%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:52:49,268: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 19:52:52,274: INFO: __init__: Requesting page (first: True, try: 3): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%0D%0A2401.00002%0D%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 19:55:42,388: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:55:58,902: INFO: common: created directory at: articles]
+[2024-05-05 19:56:39,879: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:56:52,963: INFO: common: created directory at: articles]
+[2024-05-05 19:58:21,716: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 19:58:33,350: INFO: common: created directory at: articles]
+[2024-05-05 19:59:26,177: INFO: common: created directory at: articles]
+[2024-05-05 19:59:51,823: INFO: common: created directory at: articles]
+[2024-05-05 20:01:05,180: INFO: common: created directory at: articles]
+[2024-05-05 20:02:02,735: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 20:02:12,970: INFO: common: created directory at: articles]
+[2024-05-05 20:02:52,586: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 20:03:01,558: INFO: common: created directory at: articles]
+[2024-05-05 20:04:41,973: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 20:04:59,586: INFO: common: created directory at: articles]
+[2024-05-05 20:06:35,895: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 20:06:50,410: INFO: common: created directory at: articles]
+[2024-05-05 20:06:50,411: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 20:06:52,530: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-05 20:07:00,601: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 23:36:29,562: INFO: common: created directory at: articles]
+[2024-05-05 23:36:29,563: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=papers1.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:36:32,354: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 23:36:35,366: INFO: __init__: Requesting page (first: True, try: 1): https://export.arxiv.org/api/query?search_query=&id_list=papers1.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:36:36,662: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 23:36:39,674: INFO: __init__: Requesting page (first: True, try: 2): https://export.arxiv.org/api/query?search_query=&id_list=papers1.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:36:41,070: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 23:36:44,080: INFO: __init__: Requesting page (first: True, try: 3): https://export.arxiv.org/api/query?search_query=&id_list=papers1.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:39:42,606: INFO: common: created directory at: articles]
+[2024-05-05 23:39:42,607: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=papers1.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:39:44,720: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 23:39:47,722: INFO: __init__: Requesting page (first: True, try: 1): https://export.arxiv.org/api/query?search_query=&id_list=papers1.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:39:48,976: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 23:39:51,987: INFO: __init__: Requesting page (first: True, try: 2): https://export.arxiv.org/api/query?search_query=&id_list=papers1.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:39:53,259: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-05 23:41:01,947: INFO: common: created directory at: articles]
+[2024-05-05 23:41:01,947: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:41:03,364: INFO: __init__: Got first page: 10 of 174479 total results]
+[2024-05-05 23:41:55,592: INFO: common: created directory at: articles]
+[2024-05-05 23:41:55,592: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:41:58,250: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 23:42:50,976: INFO: common: created directory at: articles]
+[2024-05-05 23:42:50,977: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:42:53,539: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 23:44:08,323: INFO: common: created directory at: articles]
+[2024-05-05 23:44:08,323: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:44:11,436: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 23:44:35,420: INFO: common: created directory at: articles]
+[2024-05-05 23:44:35,420: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:44:38,048: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 23:45:01,679: INFO: common: created directory at: articles]
+[2024-05-05 23:45:01,680: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:45:04,039: INFO: __init__: Got first page: 100 of 174479 total results]
+[2024-05-05 23:51:17,408: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 23:51:43,249: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 23:51:43,250: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 23:52:18,841: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 23:52:18,845: INFO: common: created directory at: articles]
+[2024-05-05 23:52:18,846: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002%0A&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:52:20,103: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-05 23:52:24,930: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-05 23:52:27,246: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-05 23:52:40,877: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-05 23:52:40,880: INFO: common: created directory at: articles]
+[2024-05-05 23:52:40,880: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Chatbots&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-05 23:52:43,317: INFO: __init__: Got first page: 100 of 1074 total results]
+[2024-05-05 23:53:07,226: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 23:53:07,230: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.8829808717950365 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 18491 tokens (18491 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 23:53:09,687: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 23:53:09,688: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.07865960683810624 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 18491 tokens (18491 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 23:53:10,669: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 23:53:10,672: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 0.7914735161548783 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 18491 tokens (18491 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 23:53:12,738: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 23:53:12,740: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 2.6428809407562124 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 18491 tokens (18491 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 23:53:16,436: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-05 23:53:16,438: WARNING: before_sleep: Retrying llama_index.embeddings.openai.base.get_embeddings in 8.469869013640661 seconds as it raised BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens, however you requested 18491 tokens (18491 in your prompt; 0 for the completion). Please reduce your prompt; or completion length.", 'type': 'invalid_request_error', 'param': None, 'code': None}}.]
+[2024-05-05 23:53:26,197: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 400 Bad Request"]
+[2024-05-06 09:19:53,740: INFO: common: created directory at: articles]
+[2024-05-06 09:19:53,740: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:19:57,354: INFO: __init__: Got first page: 100 of 174517 total results]
+[2024-05-06 09:22:57,696: INFO: common: created directory at: articles]
+[2024-05-06 09:22:57,696: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Mathematics&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:23:02,800: INFO: __init__: Got first page: 100 of 174517 total results]
+[2024-05-06 09:23:37,424: INFO: common: created directory at: articles]
+[2024-05-06 09:23:37,424: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Artificial+Intelligence&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:23:41,790: INFO: __init__: Got first page: 100 of 131347 total results]
+[2024-05-06 09:24:38,349: INFO: common: created directory at: articles]
+[2024-05-06 09:24:38,349: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Artificial+Intelligence&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:24:42,312: INFO: __init__: Got first page: 100 of 131347 total results]
+[2024-05-06 09:24:56,371: INFO: common: created directory at: articles]
+[2024-05-06 09:24:56,374: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Artificial+Intelligence&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:24:59,622: INFO: __init__: Got first page: 100 of 131347 total results]
+[2024-05-06 09:36:35,740: INFO: common: created directory at: articles]
+[2024-05-06 09:36:35,740: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Artificial+Intelligence&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:36:42,821: INFO: __init__: Got first page: 100 of 131347 total results]
+[2024-05-06 09:37:04,620: INFO: common: created directory at: articles]
+[2024-05-06 09:37:04,636: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Artificial+Intelligence&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:37:13,208: INFO: __init__: Got first page: 100 of 131347 total results]
+[2024-05-06 09:38:05,846: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-06 09:38:06,017: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-06 09:38:17,575: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-06 09:38:17,583: INFO: common: created directory at: articles]
+[2024-05-06 09:38:17,583: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Chatbots&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:38:21,284: INFO: __init__: Got first page: 100 of 1073 total results]
+[2024-05-06 09:38:35,862: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 09:39:42,586: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-06 09:39:42,586: INFO: common: created directory at: articles]
+[2024-05-06 09:39:42,595: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Machine+Learning&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:39:45,698: INFO: __init__: Got first page: 100 of 325470 total results]
+[2024-05-06 09:40:07,213: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 09:40:25,588: INFO: common: txt file: papers.txt loaded successfully]
+[2024-05-06 09:40:25,589: INFO: common: created directory at: articles]
+[2024-05-06 09:40:25,589: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Machine+Learning&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 09:40:29,619: INFO: __init__: Got first page: 100 of 325470 total results]
+[2024-05-06 09:40:49,398: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 09:40:50,108: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 09:40:52,271: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-06 13:14:53,833: INFO: common: created directory at: articles]
+[2024-05-06 13:14:53,833: INFO: common: created directory at: articles]
+[2024-05-06 13:14:53,836: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:14:53,836: INFO: common: created directory at: articles]
+[2024-05-06 13:14:53,836: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:14:53,836: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:14:55,879: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:14:55,883: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:14:55,891: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:14:58,890: INFO: __init__: Requesting page (first: True, try: 1): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:14:58,890: INFO: __init__: Requesting page (first: True, try: 1): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:14:58,906: INFO: __init__: Requesting page (first: True, try: 1): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:15:00,362: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:15:00,362: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:15:00,362: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:15:03,367: INFO: __init__: Requesting page (first: True, try: 2): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:15:03,367: INFO: __init__: Requesting page (first: True, try: 2): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:15:03,367: INFO: __init__: Requesting page (first: True, try: 2): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:15:04,866: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:15:04,866: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:15:04,870: INFO: __init__: Sleeping: 3.000000 seconds]
+[2024-05-06 13:15:07,886: INFO: __init__: Requesting page (first: True, try: 3): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:15:07,886: INFO: __init__: Requesting page (first: True, try: 3): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:15:07,886: INFO: __init__: Requesting page (first: True, try: 3): https://export.arxiv.org/api/query?search_query=&id_list=papers.txt&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:15:56,434: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-06 13:17:00,175: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-06 13:17:28,271: INFO: common: created directory at: articles]
+[2024-05-06 13:17:28,275: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Chatbot&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:17:30,865: INFO: __init__: Got first page: 100 of 1073 total results]
+[2024-05-06 13:17:38,361: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:18:04,977: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:18:07,427: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-06 13:18:34,757: INFO: common: created directory at: articles]
+[2024-05-06 13:18:34,760: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Machine+Learning&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:18:38,303: INFO: __init__: Got first page: 100 of 325470 total results]
+[2024-05-06 13:18:54,651: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:19:15,657: INFO: common: created directory at: articles]
+[2024-05-06 13:19:15,657: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Machine+Learning&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:19:19,298: INFO: __init__: Got first page: 100 of 325470 total results]
+[2024-05-06 13:19:36,739: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:19:37,558: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:19:39,503: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-06 13:20:02,748: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:20:04,857: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-06 13:20:17,976: INFO: common: created directory at: articles]
+[2024-05-06 13:20:17,976: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=&id_list=2312.00752%2C2401.00002&sortBy=relevance&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:20:20,979: INFO: __init__: Got first page: 2 of 2 total results]
+[2024-05-06 13:20:27,328: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:20:49,962: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:20:52,715: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-06 13:24:57,587: INFO: common: created directory at: articles]
+[2024-05-06 13:24:57,587: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Machine+Learning&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:25:01,217: INFO: __init__: Got first page: 100 of 325470 total results]
+[2024-05-06 13:25:17,523: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:25:28,121: INFO: common: created directory at: articles]
+[2024-05-06 13:25:28,121: INFO: __init__: Requesting page (first: True, try: 0): https://export.arxiv.org/api/query?search_query=Machine+Learning&id_list=&sortBy=submittedDate&sortOrder=descending&start=0&max_results=100]
+[2024-05-06 13:25:30,979: INFO: __init__: Got first page: 100 of 325470 total results]
+[2024-05-06 13:25:48,035: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:25:48,857: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 13:25:51,315: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-06 15:42:44,189: INFO: posthog: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.]
+[2024-05-06 15:43:00,384: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 15:43:02,839: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]
+[2024-05-06 15:43:50,968: INFO: _client: HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"]
+[2024-05-06 15:43:53,528: INFO: _client: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"]

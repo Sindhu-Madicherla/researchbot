@@ -36,7 +36,7 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
         raise e
     
 @ensure_annotations
-def read_txt(path_to_txt: str) -> list:
+def read_txt(path_to_txt: str) -> str:
     """reads text file and returns
 
     Args:
@@ -52,9 +52,8 @@ def read_txt(path_to_txt: str) -> list:
     try:
         with open(path_to_txt,"r") as text_file:
             papers = text_file.readlines()
-            papers = [paper.rstrip("\n") for paper in papers]
             logger.info(f"txt file: {path_to_txt} loaded successfully")
-            return papers
+            return papers[0]
     except Exception as e:
         raise e
 

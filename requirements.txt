@@ -5,4 +5,5 @@ llama-index-vector-stores-chroma
 pymupdf
 llama-index-readers-file
 arxiv
+streamlit
 -e .
